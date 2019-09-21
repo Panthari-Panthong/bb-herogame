@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="lib/mocha.css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+
+  <!-- 👍 YOUR HTML HERE 👍 -->
+  <h1 id="hero">Hero's Game</h1>
+  <div id="imgAll">
+    <img id="inn" src="./img/health-potion.png">
+    <img id="dagger" src="./img/dagger-rose.png">
+    <img id="bag" src="./img/battle-gear.png">
+  </div>
+
+  <div class="container">
+    <div id="heroStats" class="stats"></div>
+
+    <div id="btn">
+      <button id="attack-btn" class="btn attack-btn" onclick="heroAttack()">Attack!</button>
+      <button id="restart-btn" class="btn restart-btn" hidden="true" onclick="restart()">Restart Game</button>
+      <h4 id="game-message"></h4>
+    </div>
+
+    <div id="enemyStats" class="stats"></div>
+
+
+  </div>
+
+
+
+
+  <form onsubmit="submitHeroName(); return false">
+    <div class="formSection">
+      <label for="name">Change your hero's name : </label>
+      <input type="text" id="heroName" placeholder="Your hero's name..">
+      <button type="default" id="submit">Submit!</button>
+    </div>
+  </form>
+
+
+
+
+  <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
+  <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
+
+  <div id="mocha">
+    <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+  </div>
+
+  <script src="lib/chai.js"></script>
+  <script src="lib/mocha.js"></script>
+  <script src="lib/sinon.js"></script>
+  <script>mocha.setup('bdd')</script>
+  <script src="YOUR_JAVASCRIPT_HERE.js"></script>
+  <script src="lib/game_logic.test.js"></script>
+
+</body>
+
+</html>
